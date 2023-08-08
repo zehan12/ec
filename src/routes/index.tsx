@@ -3,6 +3,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Index from "../page/Index";
 import Home from "../page/home";
 import ErrorBoundary from "../error-boundary/ErrorBoundary";
+import Layout from "../layout";
+import About from "../page/About";
 
 const routes = [
     {
@@ -12,8 +14,9 @@ const routes = [
          *  
          */
         path: "/", // show path for routing
-        element: "", // show component for particular path
+        element: <Layout />, // show component for particular path
         errorElement: <ErrorBoundary />, // show error component for path is different
+        preload:<About />,
         children: [ // show children component for routing
             {
                 path: "/",
