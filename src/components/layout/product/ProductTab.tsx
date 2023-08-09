@@ -1,16 +1,11 @@
 import { NavLink } from "react-router-dom";
 
 const tabs = [
-    { name: 'overview', href: '/product/:productID', current: false },
-    { name: 'product details', href: 'details', current: false },
-    { name: 'related product', href: 'related', current: false },
-    { name: 'product reviews', href: 'reviews', current: true },
+    { name: 'overview', path: '/product/:productID', current: false },
+    { name: 'product details', path: 'details', current: false },
+    { name: 'related product', path: 'related', current: false },
+    { name: 'product reviews', path: 'reviews', current: true },
 ]
-
-
-function classNames(...classes: any) {
-    return classes.filter(Boolean).join(' ')
-}
 
 const ProductTab = () => {
     return (
@@ -25,7 +20,7 @@ const ProductTab = () => {
                             {tabs.map((tab) => (
                                 <NavLink
                                     className="w-screen"
-                                    to={tab.href}
+                                    to={tab.path}
                                     end
                                 >
                                     {({ isActive }) => (
