@@ -5,6 +5,8 @@ import Home from "../page/home";
 import ErrorBoundary from "../error-boundary/ErrorBoundary";
 import Layout from "../layout";
 import About from "../page/About";
+import ProductSlot from "../slot/ProductSlot";
+import ProductNav from "../layout/product";
 
 const routes = [
     {
@@ -13,21 +15,31 @@ const routes = [
          *  here are the initial routes that we'll need in our system.
          *  
          */
-        path: "/", // show path for routing
-        element: <Layout />, // show component for particular path
-        errorElement: <ErrorBoundary />, // show error component for path is different
-        preload:<About />,
-        children: [ // show children component for routing
+        path: "/",
+        element: <Layout />,
+        errorElement: <ErrorBoundary />, 
+        preload: <About />,
+        children: [ 
             {
-                path: "/",
+                path: "", 
                 element: <Index />,
             },
             {
-                path: "/home",
+                path: "home", 
                 element: <Home />,
             },
+            {
+                path: "product/:productId/",
+                element: <ProductNav />,
+                children: [
+                    { path: "", element: <ProductSlot slotName="productOverview" /> },
+                    { path: "details", element: <ProductSlot slotName="productDetails" /> },
+                    { path: "related", element: <ProductSlot slotName="relatedProducts" /> },
+                    { path: "reviews", element: <ProductSlot slotName="productReviews" /> },
+                ],
+            },
         ],
-    }
+    },
 ];
 
 const router = createBrowserRouter(routes, {
