@@ -1,0 +1,18 @@
+{
+  "//use cli like this":"  npx generate-react-cli component componentName",
+  "usesTypeScript": true,
+  "usesStyledComponents": false,
+  "usesCssModule": false,
+  "cssPreprocessor": "css",
+  "testLibrary": "None",
+  "component": {
+    "default": {
+      "path": "src/components",
+      "withStyle": false,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true
+    }
+  }
+}
+
