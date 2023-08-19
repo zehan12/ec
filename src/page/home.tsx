@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from "react"
-import { useAppDispatch, useAppSelector } from "../app/hooks";
+import { useAppDispatch, useAppSelector } from "../hooks/redux.hooks";
 import { fetchActiveRequest, reset } from "../redux/app/app.slice";
-import { FULFILLED, PENDING } from "../config/constants";
+import { FULFILLED, PENDING } from "../constant/state";
 
 const Home = () => {
     const dispatch = useAppDispatch();
@@ -10,6 +10,7 @@ const Home = () => {
 
     // Dispatch the fetchActiveRequest action when the component mounts
     useEffect(() => {
+        dispatch(fetchActiveRequest(0))
     }, []);
 
     const handleResetClick = () => {

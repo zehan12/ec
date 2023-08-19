@@ -4,7 +4,7 @@ import {
   createAction,
   createSlice,
 } from "@reduxjs/toolkit";
-import { IDLE, PENDING, FULFILLED, REJECTED } from "../../config/constants.js";
+import { IDLE, PENDING, FULFILLED, REJECTED } from "../../constant/state.js";
 
 interface AppState {
   active: boolean;

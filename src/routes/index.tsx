@@ -7,6 +7,7 @@ import Layout from "../layout";
 import About from "../page/About";
 import ProductSlot from "../slot/ProductSlot";
 import ProductNav from "../layout/product";
+import Admin from "../page/Admin";
 
 const routes = [
     {
@@ -40,6 +41,11 @@ const routes = [
             },
         ],
     },
+    {
+        path:"/admin",
+        element:<Admin />,
+    }
+    
 ];
 
 const router = createBrowserRouter(routes, {

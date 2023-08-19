@@ -7,6 +7,7 @@ const App = () => {
   return (
     <Fragment>
       <Provider store={store} >
+        <h1>App</h1>
         <ApplicationRoutes />
       </Provider>
     </Fragment>
